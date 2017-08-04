@@ -39,6 +39,7 @@ __attribute__( ( always_inline ) ) static inline uint32_t _GetMSP (void)
 __attribute__( ( always_inline ) ) static inline void _SetMSP (uint32_t r)
 {
     __asm volatile ("MSR MSP, %0" :: "r" (r));
+    __asm volatile ("ISB");
 }
 
 __attribute__( ( always_inline ) ) static inline uint32_t _GetPSP (void)
@@ -51,6 +52,7 @@ __attribute__( ( always_inline ) ) static inline uint32_t _GetPSP (void)
 __attribute__( ( always_inline ) ) static inline void _SetPSP (uint32_t r)
 {
     __asm volatile ("MSR PSP, %0" :: "r" (r));
+    __asm volatile ("ISB");
 }
 
 __attribute__( ( always_inline ) ) static inline uint32_t _GetCONTROL (void)
@@ -63,6 +65,7 @@ __attribute__( ( always_inline ) ) static inline uint32_t _GetCONTROL (void)
 __attribute__( ( always_inline ) ) static inline void _SetCONTROL (uint32_t r)
 {
     __asm volatile ("MSR CONTROL, %0" :: "r" (r));
+    __asm volatile ("ISB");
 }
 
 __attribute__( ( always_inline ) ) static inline uint32_t _GetPRIMASK (void)
