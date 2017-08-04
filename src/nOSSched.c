@@ -504,7 +504,7 @@ nOS_Error nOS_Start(void)
     {
         /* Context switching is possible after this point */
         nOS_running = true;
-
+        nOS_Schedule();
         err = NOS_OK;
     }
 

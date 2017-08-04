@@ -61,6 +61,7 @@ void nOS_TickThread (void *payload, void *arg)
         }
 #endif
         nOS_WakeUpThread(thread, err);
+        nOS_Schedule();
     }
 }
 #endif  /* NOS_CONFIG_WAITING_TIMEOUT_ENABLE & NOS_CONFIG_SLEEP_ENABLE & NOS_CONFIG_SLEEP_UNTIL_ENABLE */
